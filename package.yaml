@@ -35,6 +35,9 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - stm32f-ivory-blinky
+    - ivory
+    - ivory-hw
+    - tower >= 0.9
 
 tests:
   stm32f-ivory-blinky-test:

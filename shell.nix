@@ -20,4 +20,8 @@ mkShell {
     stack
     gcc-arm-embedded
   ];
+  shellHook = ''
+    unset SSL_CERT_FILE
+    unset NIX_SSL_CERT_FILE
+  '';
 }

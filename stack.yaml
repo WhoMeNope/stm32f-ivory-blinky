@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-15.0
+resolver: lts-14.25
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -29,7 +29,9 @@ resolver: lts-15.0
 #   - auto-update
 #   - wai
 packages:
+- dep/tower/tower
 - .
+
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
@@ -39,7 +41,15 @@ packages:
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
-# extra-deps: []
+extra-deps:
+- ivory-0.1.0.9@sha256:9fc1abaccafbd09ef23d1616ba185208b6017d48cf160f4e78144c15da89186a,4779
+- ivory-artifact-0.1.0.5@sha256:547dc083b98597ada7a1627c17f3c17bdd169c429efcb80f311b9beb2b43452f,1162
+- ivory-backend-c-0.1.0.8@sha256:b6eff57821e9570bd632adde90ece2d80c2609f430dec4d6d11da0515ad33771,2000
+- ivory-hw-0.1.0.6@sha256:b184139af2c31b65a7f7f7610fe949a1f4a26b8ab63955914893f69d76cdb5fc,1444
+- ivory-stdlib-0.1.0.5@sha256:b486cb07f25b0cadb1f51fb67435e41a248223c0b30ccd3fad575b93e7f97d9f,1348
+- ivory-opts-0.1.0.6@sha256:af13e018c7c29b8835f1f407b5cdad09b8ebd76260681f4bf3cb63e888b9a02f,1772
+- monadLib-3.10@sha256:21dc120625bd612527b372e54251fd8358270effe263023d40d8e5892d24531c,653
+- th-abstraction-0.2.11.0@sha256:5c286870277705796887d0cbfa48a6aa5e0f206152592a54fbc550d8ce0c5ab5,1827
 
 # Override default flag values for local packages and extra-deps
 # flags: {}
