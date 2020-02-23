@@ -51,48 +51,6 @@ packages:
     git: https://github.com/GaloisInc/ivory-tower-stm32.git
     commit: 350ec81025fd20c92d18934b15bc9caa5546caa2
 - completed:
-    hackage: ivory-0.1.0.9@sha256:9fc1abaccafbd09ef23d1616ba185208b6017d48cf160f4e78144c15da89186a,4779
-    pantry-tree:
-      size: 4776
-      sha256: 4ee649ac96a7a1e2db555468dfcd03c398ca73a06f859a9924bc5fc560426ebf
-  original:
-    hackage: ivory-0.1.0.9@sha256:9fc1abaccafbd09ef23d1616ba185208b6017d48cf160f4e78144c15da89186a,4779
-- completed:
-    hackage: ivory-artifact-0.1.0.5@sha256:547dc083b98597ada7a1627c17f3c17bdd169c429efcb80f311b9beb2b43452f,1162
-    pantry-tree:
-      size: 434
-      sha256: dafe5bf6cc14e6246ec5f08a651cdaa6b31578b483a856fc2f5d8bcfcd9894f4
-  original:
-    hackage: ivory-artifact-0.1.0.5@sha256:547dc083b98597ada7a1627c17f3c17bdd169c429efcb80f311b9beb2b43452f,1162
-- completed:
-    hackage: ivory-backend-c-0.1.0.8@sha256:b6eff57821e9570bd632adde90ece2d80c2609f430dec4d6d11da0515ad33771,2000
-    pantry-tree:
-      size: 921
-      sha256: aec4e45d8ce9aa63e384bcbcb5e6891465fe0f4525fd10f0d241fa87441dd76e
-  original:
-    hackage: ivory-backend-c-0.1.0.8@sha256:b6eff57821e9570bd632adde90ece2d80c2609f430dec4d6d11da0515ad33771,2000
-- completed:
-    hackage: ivory-hw-0.1.0.6@sha256:b184139af2c31b65a7f7f7610fe949a1f4a26b8ab63955914893f69d76cdb5fc,1444
-    pantry-tree:
-      size: 643
-      sha256: c718b0194385534a71024c59a03e6d49a3e3d46099ea37b5fea16cda4e1de272
-  original:
-    hackage: ivory-hw-0.1.0.6@sha256:b184139af2c31b65a7f7f7610fe949a1f4a26b8ab63955914893f69d76cdb5fc,1444
-- completed:
-    hackage: ivory-serialize-0.1.0.6@sha256:171d705b61502f0c1883c40e735547cbf06e3664435faa3ff18d6cd0f3a4f9bc,1397
-    pantry-tree:
-      size: 737
-      sha256: 6c36449d016d61b0ddb6881444c8cc1171ca7e11982b1ca219638098da70a7d5
-  original:
-    hackage: ivory-serialize-0.1.0.6@sha256:171d705b61502f0c1883c40e735547cbf06e3664435faa3ff18d6cd0f3a4f9bc,1397
-- completed:
-    hackage: ivory-stdlib-0.1.0.5@sha256:b486cb07f25b0cadb1f51fb67435e41a248223c0b30ccd3fad575b93e7f97d9f,1348
-    pantry-tree:
-      size: 765
-      sha256: de0bbe08cc2c748b476b96584efbf4b6a699131f210461dad908ccd630b0e31c
-  original:
-    hackage: ivory-stdlib-0.1.0.5@sha256:b486cb07f25b0cadb1f51fb67435e41a248223c0b30ccd3fad575b93e7f97d9f,1348
-- completed:
     hackage: hastache-0.6.1@sha256:6e645296912c401a73a346c38a6ce2446d42591b3c602f7c657a626d9a0c8d3b,2363
     pantry-tree:
       size: 589

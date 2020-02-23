@@ -1,0 +1,16 @@
+cabal.sandbox.config*
+.cabal-sandbox*
+dist
+dist-newstyle
+.ghc.environment.*
+/ivory-examples/test_dir/
+TAGS
+ghc-switch.sh
+*.o
+*.out
+*.log
+.hpc
+clang-test-dir
+.stack-work
+/test-dir-c-files
+.DS_Store
