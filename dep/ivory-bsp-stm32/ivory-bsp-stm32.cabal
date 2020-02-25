@@ -55,6 +55,11 @@ library
                        Ivory.BSP.STM32.Peripheral.Flash,
                        Ivory.BSP.STM32.Peripheral.Flash.Regs,
 
+                       Ivory.BSP.STM32.Peripheral.GPIOv2.Peripheral,
+                       Ivory.BSP.STM32.Peripheral.GPIOv2.RegTypes,
+                       Ivory.BSP.STM32.Peripheral.GPIOv2.Regs,
+                       Ivory.BSP.STM32.Peripheral.GPIO,
+
                        Ivory.BSP.STM32.Peripheral.GPIOF4,
                        Ivory.BSP.STM32.Peripheral.GPIOF4.RegTypes,
                        Ivory.BSP.STM32.Peripheral.GPIOF4.Regs,
@@ -139,7 +144,13 @@ library
                        Ivory.BSP.STM32F427.UART.DMA,
                        Ivory.BSP.STM32F427.DMA,
                        Ivory.BSP.STM32F427.RNG,
-                       Ivory.BSP.STM32F427.ADC
+                       Ivory.BSP.STM32F427.ADC,
+
+                       Ivory.BSP.STM32F767.MemoryMap,
+                       Ivory.BSP.STM32F767.RCC,
+                       Ivory.BSP.STM32F767.GPIO,
+                       Ivory.BSP.STM32F767.GPIO.Ports,
+                       Ivory.BSP.STM32F767.GPIO.Pins
 
   other-modules:       Paths_ivory_bsp_stm32
 
