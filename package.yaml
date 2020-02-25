@@ -21,34 +21,23 @@ description:         Please see the README on GitHub at <https://github.com/WhoM
 
 dependencies:
 - base >= 4.7 && < 5
-- ivory-bsp-stm32
 
 library:
   source-dirs: src
+  dependencies:
+  - ivory
+  - ivory-hw
+  - ivory-stdlib
+  - ivory-backend-c
+  - ivory-bsp-stm32
+  - tower >= 0.9
+  - tower-config
+  - tower-freertos-stm32
 
 executables:
   stm32f-ivory-blinky-exe:
     main:                Main.hs
     source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - ivory
-    - ivory-hw
-    - ivory-stdlib
-    - ivory-backend-c
-    - tower >= 0.9
-    - tower-config
-    - tower-freertos-stm32
-    - ivory-bsp-stm32
-    - stm32f-ivory-blinky
-
-tests:
-  stm32f-ivory-blinky-test:
-    main:                Spec.hs
-    source-dirs:         test
     ghc-options:
     - -threaded
     - -rtsopts

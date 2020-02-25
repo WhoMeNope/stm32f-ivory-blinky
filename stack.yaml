@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-14.25
+resolver: lts-9.0
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -29,16 +29,7 @@ resolver: lts-14.25
 #   - auto-update
 #   - wai
 packages:
-- dep/ivory/ivory
-- dep/ivory/ivory-artifact
-- dep/ivory/ivory-backend-c
-- dep/ivory/ivory-hw
-- dep/ivory/ivory-serialize
-- dep/ivory/ivory-stdlib
-- dep/tower/tower
-- dep/tower/tower-config
-- dep/tower/tower-hal
-- dep/ivory-tower-stm32-generated
+- dep/ivory-bsp-stm32
 - .
 
 # Dependency packages to be pulled from upstream that are not in the resolver.
@@ -49,20 +40,27 @@ packages:
 # - acme-missiles-0.3
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
-#
 extra-deps:
-- git: https://github.com/HaskellEmbedded/data-stm32.git
-  commit: 62a54256ad57675e5cb00ee724a743d4ac08fd97
+- th-abstraction-0.2.5.0
+- monadLib-3.7.3
+- ivory-0.1.0.9@sha256:9fc1abaccafbd09ef23d1616ba185208b6017d48cf160f4e78144c15da89186a,4779
+- ivory-backend-c-0.1.0.8@sha256:b6eff57821e9570bd632adde90ece2d80c2609f430dec4d6d11da0515ad33771,2000
+- ivory-hw-0.1.0.6@sha256:b184139af2c31b65a7f7f7610fe949a1f4a26b8ab63955914893f69d76cdb5fc,1444
+- ivory-stdlib-0.1.0.5@sha256:b486cb07f25b0cadb1f51fb67435e41a248223c0b30ccd3fad575b93e7f97d9f,1348
+- ivory-artifact-0.1.0.5@sha256:547dc083b98597ada7a1627c17f3c17bdd169c429efcb80f311b9beb2b43452f,1162
+- ivory-opts-0.1.0.6@sha256:af13e018c7c29b8835f1f407b5cdad09b8ebd76260681f4bf3cb63e888b9a02f,1772
 - git: https://github.com/GaloisInc/ivory-tower-stm32.git
   commit: 350ec81025fd20c92d18934b15bc9caa5546caa2
   subdirs:
   - ivory-freertos-bindings
   - tower-freertos-stm32
-- hastache-0.6.1@sha256:6e645296912c401a73a346c38a6ce2446d42591b3c602f7c657a626d9a0c8d3b,2363
-- hxt-xpath-9.1.2.2@sha256:9cd590ae93a04573db8f90fa4094625ebd97dded45da7667c577ce6b38a42900,1999
-- ivory-opts-0.1.0.6@sha256:af13e018c7c29b8835f1f407b5cdad09b8ebd76260681f4bf3cb63e888b9a02f,1772
-- karver-0.1.2@sha256:ee99a21567b04d5ee4f55dfb20ebbf466e8183c56af22e10878947f60cc32c4d,1755
-- monadLib-3.10@sha256:21dc120625bd612527b372e54251fd8358270effe263023d40d8e5892d24531c,653
+- git: https://github.com/GaloisInc/tower
+  commit: a43f5e36c6443472ea2dc15bbd49faf8643a6f87
+  subdirs:
+  - tower
+  - tower-hal
+  - tower-config
+- ivory-serialize-0.1.0.6@sha256:171d705b61502f0c1883c40e735547cbf06e3664435faa3ff18d6cd0f3a4f9bc,1397
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

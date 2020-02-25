@@ -1,9 +1,0 @@
-dist
-.cabal-sandbox
-cabal.sandbox.config
-TAGS
-.hpc
-*.aadl
-*.swp
-.stack-work
-/tower-aadl/test_external_codegen

@@ -5,19 +5,61 @@
 
 packages:
 - completed:
-    cabal-file:
-      size: 3981
-      sha256: 19fe39efe45461e5ea3f205fe749962f34dd15b253af8fa537e0c4ed531938fa
-    name: data-stm32
-    version: 0.1.0.0
-    git: https://github.com/HaskellEmbedded/data-stm32.git
+    hackage: th-abstraction-0.2.5.0@sha256:1bd4a1ce2c8552ec4c5da42d6c4a7f912a7887b303b7c5bb287d1454f3cf3c58,1790
     pantry-tree:
-      size: 13474
-      sha256: 68d0d99f3751c7e5c1b999b09e2294b3f8f9123604003b2f543e591cf33a2c8b
-    commit: 62a54256ad57675e5cb00ee724a743d4ac08fd97
+      size: 583
+      sha256: bdcdc2747d5ddf0da6f8c2ba8d0c036755886326717550c57f31549ce01dfed6
   original:
-    git: https://github.com/HaskellEmbedded/data-stm32.git
-    commit: 62a54256ad57675e5cb00ee724a743d4ac08fd97
+    hackage: th-abstraction-0.2.5.0
+- completed:
+    hackage: monadLib-3.7.3@sha256:3ffd5229638985bfd8b861e7bad0afa643d65cefe110f8d7d619989beb7a6f3e,980
+    pantry-tree:
+      size: 426
+      sha256: f6ff91ff11000bf19c1c1ea57e3a897916765b581caa7934db9f049a39d875ad
+  original:
+    hackage: monadLib-3.7.3
+- completed:
+    hackage: ivory-0.1.0.9@sha256:9fc1abaccafbd09ef23d1616ba185208b6017d48cf160f4e78144c15da89186a,4779
+    pantry-tree:
+      size: 4776
+      sha256: 4ee649ac96a7a1e2db555468dfcd03c398ca73a06f859a9924bc5fc560426ebf
+  original:
+    hackage: ivory-0.1.0.9@sha256:9fc1abaccafbd09ef23d1616ba185208b6017d48cf160f4e78144c15da89186a,4779
+- completed:
+    hackage: ivory-backend-c-0.1.0.8@sha256:b6eff57821e9570bd632adde90ece2d80c2609f430dec4d6d11da0515ad33771,2000
+    pantry-tree:
+      size: 921
+      sha256: aec4e45d8ce9aa63e384bcbcb5e6891465fe0f4525fd10f0d241fa87441dd76e
+  original:
+    hackage: ivory-backend-c-0.1.0.8@sha256:b6eff57821e9570bd632adde90ece2d80c2609f430dec4d6d11da0515ad33771,2000
+- completed:
+    hackage: ivory-hw-0.1.0.6@sha256:b184139af2c31b65a7f7f7610fe949a1f4a26b8ab63955914893f69d76cdb5fc,1444
+    pantry-tree:
+      size: 643
+      sha256: c718b0194385534a71024c59a03e6d49a3e3d46099ea37b5fea16cda4e1de272
+  original:
+    hackage: ivory-hw-0.1.0.6@sha256:b184139af2c31b65a7f7f7610fe949a1f4a26b8ab63955914893f69d76cdb5fc,1444
+- completed:
+    hackage: ivory-stdlib-0.1.0.5@sha256:b486cb07f25b0cadb1f51fb67435e41a248223c0b30ccd3fad575b93e7f97d9f,1348
+    pantry-tree:
+      size: 765
+      sha256: de0bbe08cc2c748b476b96584efbf4b6a699131f210461dad908ccd630b0e31c
+  original:
+    hackage: ivory-stdlib-0.1.0.5@sha256:b486cb07f25b0cadb1f51fb67435e41a248223c0b30ccd3fad575b93e7f97d9f,1348
+- completed:
+    hackage: ivory-artifact-0.1.0.5@sha256:547dc083b98597ada7a1627c17f3c17bdd169c429efcb80f311b9beb2b43452f,1162
+    pantry-tree:
+      size: 434
+      sha256: dafe5bf6cc14e6246ec5f08a651cdaa6b31578b483a856fc2f5d8bcfcd9894f4
+  original:
+    hackage: ivory-artifact-0.1.0.5@sha256:547dc083b98597ada7a1627c17f3c17bdd169c429efcb80f311b9beb2b43452f,1162
+- completed:
+    hackage: ivory-opts-0.1.0.6@sha256:af13e018c7c29b8835f1f407b5cdad09b8ebd76260681f4bf3cb63e888b9a02f,1772
+    pantry-tree:
+      size: 1019
+      sha256: b9cd1ba91d6e6b52d9cc8a9fa88ff05a68fed0668503303b3b26eda1fe1915f9
+  original:
+    hackage: ivory-opts-0.1.0.6@sha256:af13e018c7c29b8835f1f407b5cdad09b8ebd76260681f4bf3cb63e888b9a02f,1772
 - completed:
     subdir: ivory-freertos-bindings
     cabal-file:
@@ -51,43 +93,63 @@ packages:
     git: https://github.com/GaloisInc/ivory-tower-stm32.git
     commit: 350ec81025fd20c92d18934b15bc9caa5546caa2
 - completed:
-    hackage: hastache-0.6.1@sha256:6e645296912c401a73a346c38a6ce2446d42591b3c602f7c657a626d9a0c8d3b,2363
+    subdir: tower
+    cabal-file:
+      size: 2749
+      sha256: a846f834de699c96858892ac367bde7f363f3c216923f0eb57dab875f12d266a
+    name: tower
+    version: 0.9.0.0
+    git: https://github.com/GaloisInc/tower
     pantry-tree:
-      size: 589
-      sha256: 997dae6ebf4cfcd563611666600237758fcd41b2b71d8ec7788875237c69fd12
+      size: 2595
+      sha256: 1ceefe33f508c59942489b0a6360f06d8c158e10b5099bad82668e371c708471
+    commit: a43f5e36c6443472ea2dc15bbd49faf8643a6f87
   original:
-    hackage: hastache-0.6.1@sha256:6e645296912c401a73a346c38a6ce2446d42591b3c602f7c657a626d9a0c8d3b,2363
+    subdir: tower
+    git: https://github.com/GaloisInc/tower
+    commit: a43f5e36c6443472ea2dc15bbd49faf8643a6f87
 - completed:
-    hackage: hxt-xpath-9.1.2.2@sha256:9cd590ae93a04573db8f90fa4094625ebd97dded45da7667c577ce6b38a42900,1999
+    subdir: tower-hal
+    cabal-file:
+      size: 1205
+      sha256: c3e4e0c1d8c1804af0cb01b0d478c971594240253b256562285244253d1cf3d5
+    name: tower-hal
+    version: 0.1.0.0
+    git: https://github.com/GaloisInc/tower
     pantry-tree:
-      size: 2225
-      sha256: aee2f75974e868ff429b8ff349a29667536c60397098f5dfedc968d1951511bb
+      size: 1262
+      sha256: 9a836dbef2ab4b1a4fd4b55c6409715a3efe4d6492399fe17e95dfad4daf9c31
+    commit: a43f5e36c6443472ea2dc15bbd49faf8643a6f87
   original:
-    hackage: hxt-xpath-9.1.2.2@sha256:9cd590ae93a04573db8f90fa4094625ebd97dded45da7667c577ce6b38a42900,1999
+    subdir: tower-hal
+    git: https://github.com/GaloisInc/tower
+    commit: a43f5e36c6443472ea2dc15bbd49faf8643a6f87
 - completed:
-    hackage: ivory-opts-0.1.0.6@sha256:af13e018c7c29b8835f1f407b5cdad09b8ebd76260681f4bf3cb63e888b9a02f,1772
+    subdir: tower-config
+    cabal-file:
+      size: 1657
+      sha256: 3e3e8a1dfca32ef947c9f5f2645bc64a6fc229b31592e0d8da06fad3ab9cbfc8
+    name: tower-config
+    version: 0.1.0.0
+    git: https://github.com/GaloisInc/tower
     pantry-tree:
-      size: 1019
-      sha256: b9cd1ba91d6e6b52d9cc8a9fa88ff05a68fed0668503303b3b26eda1fe1915f9
+      size: 1300
+      sha256: 2caacb5d58827d3bd2182e24fe39b3a0ac7ad7d8cbdc19ded51aa0eed038e36c
+    commit: a43f5e36c6443472ea2dc15bbd49faf8643a6f87
   original:
-    hackage: ivory-opts-0.1.0.6@sha256:af13e018c7c29b8835f1f407b5cdad09b8ebd76260681f4bf3cb63e888b9a02f,1772
+    subdir: tower-config
+    git: https://github.com/GaloisInc/tower
+    commit: a43f5e36c6443472ea2dc15bbd49faf8643a6f87
 - completed:
-    hackage: karver-0.1.2@sha256:ee99a21567b04d5ee4f55dfb20ebbf466e8183c56af22e10878947f60cc32c4d,1755
+    hackage: ivory-serialize-0.1.0.6@sha256:171d705b61502f0c1883c40e735547cbf06e3664435faa3ff18d6cd0f3a4f9bc,1397
     pantry-tree:
-      size: 391
-      sha256: 9f757fd4d31e07c8239380402f06adb5da66fb9635576102f7ab162c7b1eaa78
+      size: 737
+      sha256: 6c36449d016d61b0ddb6881444c8cc1171ca7e11982b1ca219638098da70a7d5
   original:
-    hackage: karver-0.1.2@sha256:ee99a21567b04d5ee4f55dfb20ebbf466e8183c56af22e10878947f60cc32c4d,1755
-- completed:
-    hackage: monadLib-3.10@sha256:21dc120625bd612527b372e54251fd8358270effe263023d40d8e5892d24531c,653
-    pantry-tree:
-      size: 426
-      sha256: 6c713ce64f1979723a9c30804e0675d053196341d7f6a61cfaf82a8f91c8f690
-  original:
-    hackage: monadLib-3.10@sha256:21dc120625bd612527b372e54251fd8358270effe263023d40d8e5892d24531c,653
+    hackage: ivory-serialize-0.1.0.6@sha256:171d705b61502f0c1883c40e735547cbf06e3664435faa3ff18d6cd0f3a4f9bc,1397
 snapshots:
 - completed:
-    size: 524163
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/25.yaml
-    sha256: 97548b4e927a8a862d4a203687ca18a3f5d2ae75b4b72c946fb29c17df1a5082
-  original: lts-14.25
+    size: 533451
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/9/0.yaml
+    sha256: 27f29b231b39ea68e967a7a4346b2693a49d77c50f41fc0c276e11189a538da7
+  original: lts-9.0
