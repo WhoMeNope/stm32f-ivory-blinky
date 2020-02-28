@@ -1,3 +1,4 @@
 .stack-work/
 stm32f-ivory-blinky.cabal
 *~
+out/
