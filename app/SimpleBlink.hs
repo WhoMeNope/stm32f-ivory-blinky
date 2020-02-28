@@ -6,62 +6,44 @@ import Ivory.Language
 import Ivory.Tower
 import Ivory.HW.Module
 
--- This artificial Tower program toggles LED when
--- message arrives on its channel
-ledToggle :: GPIOPin -> Tower e (ChanInput ('Stored ITime))
-ledToggle ledPin = do
-  -- Create a channel for communicating with this tower
-  (cIn, cOut) <- channel
+import LED
+------------------------------
 
-  monitor "ledToggle" $ do
-    -- declare dependency on Ivory.HW.Module.hw_moduledef
-    monitorModuleDef $ hw_moduledef
+-- | LED Controller: Given a set of leds and a control channel of booleans,
+--   setup the pin hardware, and turn the leds on when the control channel is
+--   true.
+ledController :: [LED] -> ChanOutput ('Stored IBool) -> Monitor e ()
+ledController leds rxer = do
+  -- Bookkeeping: this task uses Ivory.HW.Module.hw_moduledef
+  monitorModuleDef $ hw_moduledef
+  -- Setup hardware before running any event handlers
+  handler systemInit "hardwareinit" $
+    callback $ const $ mapM_ ledSetup leds
+  -- Run a callback on each message posted to the channel
+  handler rxer "newoutput" $ callback $ \outref -> do
+    out <- deref outref
+    -- Turn pins on or off according to event value
+    ifte_ out
+      (mapM_ ledOn  leds)
+      (mapM_ ledOff leds)
 
-    -- handler called during system initialization
-    handler systemInit "initLED" $ do
-      callback $ const $ do
-        pinEnable ledPin
-        pinSetMode ledPin gpio_mode_output
+-- | Blink task: Given a period and a channel source, output an alternating
+--   stream of true / false on each period.
+blinker :: Time a => a -> Tower e (ChanOutput ('Stored IBool))
+blinker t = do
+  p_chan <- period t
+  (cin, cout) <- channel
+  monitor "blinker" $ do
+    handler p_chan "per" $  do
+      e <- emitter cin 1
+      callback $ \timeref -> do
+        time <- deref timeref
+        -- Emit boolean value which will alternate each period.
+        emitV e (time .% (2*p) <? p)
+  return cout
+  where p = toITime t
 
-    -- LED state
-    ledOn <- stateInit "ledOn" (ival false)
-
-    -- handler for channel output
-    handler cOut "toggleLED" $ do
-      callback $ const $ do
-        -- get current state
-        isOn <- deref ledOn
-
-        ifte_ isOn
-          (do
-            pinClear ledPin
-            store ledOn false
-          )
-          (do
-            pinSet ledPin
-            store ledOn true
-          )
-
-  return (cIn)
-
--- main Tower of our application
-app :: (e -> GPIOPin) -> Tower e ()
-app toledpin = do
-  ledpin <- toledpin <$> getEnv
-
-  -- creates a period that fires every 500ms
-  -- `per` is a ChanOutput, specifically ChanOutput ('Stored ITime)
-  per <- period (Milliseconds 500)
-
-  -- create our ledToggle tower
-  togIn <- ledToggle ledpin
-
-  -- this monitor simply forwards `per` messages to `togIn` ChanInput
-  monitor "blink" $ do
-    handler per "blinkPeriod" $ do
-      -- message to `togIn` channel are sent via `togInEmitter` - FIFO with capacity 1
-      togInEmitter <- emitter togIn 1
-
-      -- callback for period
-      callback $ \x ->
-        emit togInEmitter x
+blink :: Time a => a -> [LED] -> Tower p ()
+blink per pins = do
+  onoff <- blinker per
+  monitor "led" $ ledController pins onoff
