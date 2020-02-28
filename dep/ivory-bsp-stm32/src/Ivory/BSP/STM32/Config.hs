@@ -1,11 +1,10 @@
-
-
 module Ivory.BSP.STM32.Config
   ( STM32Config(..)
   , Processor(..)
   , PX4Version(..)
   , stm32f405Defaults
   , stm32f427Defaults
+  , stm32f767Defaults
   , px4versionParser
   , stm32ConfigParser
   ) where
@@ -48,6 +47,14 @@ stm32f427Defaults xtal_mhz = STM32Config
   , stm32config_sram       = 192 * 1024
   }
 
+stm32f767Defaults :: Integer -> STM32Config
+stm32f767Defaults xtal_mhz = STM32Config
+  { stm32config_processor  = STM32F767
+  , stm32config_px4version = Nothing
+  , stm32config_clock      = externalXtal xtal_mhz 168
+  , stm32config_sram       = 512 * 1024
+  }
+
 px4versionParser :: ConfigParser (Maybe PX4Version)
 px4versionParser = string >>= \s ->
   case map C.toLower s of
@@ -59,7 +66,7 @@ px4versionParser = string >>= \s ->
 
 stm32ConfigParser :: STM32Config -> ConfigParser STM32Config
 stm32ConfigParser conf = (subsection "stm32" stm32parser) `withDefault` conf
-  where 
+  where
   stm32parser = do
     p <- (subsection "processor" processorParser) `withDefault` (stm32config_processor conf)
     v <- (subsection "px4version" px4versionParser) `withDefault` (stm32config_px4version conf)

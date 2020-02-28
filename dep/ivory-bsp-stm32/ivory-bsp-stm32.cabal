@@ -58,6 +58,7 @@ library
                        Ivory.BSP.STM32.Peripheral.GPIOv2.Peripheral,
                        Ivory.BSP.STM32.Peripheral.GPIOv2.RegTypes,
                        Ivory.BSP.STM32.Peripheral.GPIOv2.Regs,
+                       Ivory.BSP.STM32.Peripheral.GPIOv2.TH,
                        Ivory.BSP.STM32.Peripheral.GPIO,
 
                        Ivory.BSP.STM32.Peripheral.GPIOF4,
@@ -148,6 +149,7 @@ library
 
                        Ivory.BSP.STM32F767.MemoryMap,
                        Ivory.BSP.STM32F767.RCC,
+                       Ivory.BSP.STM32F767.Interrupt,
                        Ivory.BSP.STM32F767.GPIO,
                        Ivory.BSP.STM32F767.GPIO.Ports,
                        Ivory.BSP.STM32F767.GPIO.Pins

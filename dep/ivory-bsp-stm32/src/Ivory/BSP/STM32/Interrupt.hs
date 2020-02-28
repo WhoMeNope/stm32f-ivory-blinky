@@ -11,7 +11,6 @@ import Ivory.HW
 import Ivory.BSP.ARMv7M.Exception
 import Ivory.BSP.ARMv7M.SystemControl.NVIC
 
-
 class STM32Interrupt i where
   interruptIRQn             :: i -> IRQn
   interruptTable            :: i -> [Maybe i]

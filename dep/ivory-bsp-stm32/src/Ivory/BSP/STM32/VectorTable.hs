@@ -15,6 +15,7 @@ import Ivory.BSP.STM32.Processor
 
 import qualified Ivory.BSP.STM32F405.Interrupt as F405
 import qualified Ivory.BSP.STM32F427.Interrupt as F427
+import qualified Ivory.BSP.STM32F767.Interrupt as F767
 
 reset_handler :: String
 reset_handler = exceptionHandlerName Reset
@@ -27,6 +28,7 @@ vector_table processor =
   as = case processor of
     STM32F405 -> attrs F405.WWDG
     STM32F427 -> attrs F427.WWDG
+    STM32F767 -> attrs F767.WWDG
 
 attrs :: forall i . (STM32Interrupt i) => i -> [(String, String)]
 attrs i = [("entries", entries)
