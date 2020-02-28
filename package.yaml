@@ -24,15 +24,6 @@ dependencies:
 
 library:
   source-dirs: src
-  dependencies:
-  - ivory
-  - ivory-hw
-  - ivory-stdlib
-  - ivory-backend-c
-  - ivory-bsp-stm32
-  - tower >= 0.9
-  - tower-config
-  - tower-freertos-stm32
 
 executables:
   stm32f-ivory-blinky-exe:
@@ -43,4 +34,12 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
+    - ivory
+    - ivory-hw
+    - ivory-stdlib
+    - ivory-backend-c
+    - ivory-bsp-stm32
+    - tower >= 0.9
+    - tower-config
+    - tower-freertos-stm32
     - stm32f-ivory-blinky

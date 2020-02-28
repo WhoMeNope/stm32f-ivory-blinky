@@ -29,7 +29,8 @@ resolver: lts-9.0
 #   - auto-update
 #   - wai
 packages:
-- dep/ivory-bsp-stm32
+# - dep/ivory-bsp-stm32
+- dep/ivory-tower-stm32-generated
 - .
 
 # Dependency packages to be pulled from upstream that are not in the resolver.
