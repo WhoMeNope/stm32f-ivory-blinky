@@ -1,27 +1,23 @@
+{ nixpkgs ? import ./nixpkgs.nix {}, compiler ? "ghc881" }:
 let
-  # Look here for information about how to generate `nixpkgs-version.json`.
-  #  → https://nixos.wiki/wiki/FAQ/Pinning_Nixpkgs
-  pinnedVersion = builtins.fromJSON (builtins.readFile ./.nixpkgs-version.json);
-  pinnedPkgs = import (builtins.fetchGit {
-    inherit (pinnedVersion) url rev;
-
-    ref = "nixos-unstable";
-  }) {};
+  default = (import ./default.nix { inherit nixpkgs compiler; });
 in
+nixpkgs.stdenv.mkDerivation {
+  name = "ivory-tower-shell";
 
-# This allows overriding pkgs by passing `--arg pkgs ...`
-{ pkgs ? pinnedPkgs }:
+  buildInputs = with default; [
+    hello.env.nativeBuildInputs
 
-with pkgs;
+    pkgs.gnumake
+    pkgs.gcc-arm-embedded
 
-mkShell {
-  buildInputs = [
-    # put packages here.
-    stack
-    gcc-arm-embedded
+    ivorypkgs.cabal-install
+    ivorypkgs.ghcid
+
+    hgdb
   ];
+
   shellHook = ''
-    unset SSL_CERT_FILE
-    unset NIX_SSL_CERT_FILE
+    echo "Ivory Tower shell"
   '';
 }
